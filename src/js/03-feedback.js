@@ -39,7 +39,7 @@ function populateTextInput() {
   //создаем переменную, в которую записываем значение из localStorage
   const savedText = localStorage.getItem('feedback-form-state');
   //преобразуем значение в обьект
-  parseText = JSON.parse(savedText);
+  const parseText = JSON.parse(savedText);
   //если в localStorage есть savedText, то присваиваем input and textarea значения из обьекта parseText
   if (savedText) {
     inputEmail.value = parseText.email;
