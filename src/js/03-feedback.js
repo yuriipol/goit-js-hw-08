@@ -42,7 +42,13 @@ function populateTextInput() {
   const parseText = JSON.parse(savedText);
   //если в localStorage есть savedText, то присваиваем input and textarea значения из обьекта parseText
   if (savedText) {
-    inputEmail.value = parseText.email;
-    textareaMessage.value = parseText.message;
+    // inputEmail.value = parseText.email;
+    // textareaMessage.value = parseText.message;
+    const formEl = form.elements;
+    for (const key in parseText) {
+      if (parseText.hasOwnProperty(key)) {
+        formEl[key].value = parseText[key];
+      }
+    }
   }
 }
